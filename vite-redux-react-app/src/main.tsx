@@ -2,15 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-
-const rootElement = document.getElementById('root');
-
-if (!rootElement) {
-  throw new Error('Root element with id "root" not found in the document.');
-}
-
+import { Provider } from 'react-redux'
+import {store} from "./store/index.ts"
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <Provider store={store}>
     <App />
+  </Provider>
   </React.StrictMode>,
 )
